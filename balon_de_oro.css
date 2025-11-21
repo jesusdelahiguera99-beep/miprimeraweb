@@ -1,0 +1,135 @@
+:root {
+    --bg-dark: #050505;
+    --bg-card: #121212;
+    --gold-primary: #C6A87C;
+    --gold-secondary: #E5D1A6;
+    --gold-dark: #8C7350;
+    --text-light: #FFFFFF;
+    --text-gray: #B3B3B3;
+    --font-main: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+}
+
+/* Header / Hero */
+.hero {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 50% 50%, #2a2a2a 0%, var(--bg-dark) 100%);
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 1px solid var(--gold-dark);
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    background: linear-gradient(to right, var(--gold-secondary), var(--gold-primary), var(--gold-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    color: var(--text-gray);
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* Grid */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.winners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Card */
+.card {
+    background: var(--bg-card);
+    border: 1px solid rgba(198, 168, 124, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(198, 168, 124, 0.15);
+    border-color: var(--gold-primary);
+}
+
+.year-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--gold-primary);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-serif);
+}
+
+.player-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+.player-info {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.club {
+    color: var(--gold-secondary);
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 3rem;
+    color: var(--text-gray);
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
